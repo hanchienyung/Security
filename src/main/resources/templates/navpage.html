@@ -13,8 +13,6 @@
         <ul class="navbar-nav nav-pills">
             <li class="nav-item" sec:authorize="isAnonymous()" >
                    <a class="nav-link" href="login">Login</a>
-
-           <!--     <a class="nav-link" href="login">Login</a>-->
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="home">Home</a>
@@ -29,7 +27,7 @@
                 <a class="nav-link" href="EmployerMenu">EmployerMenu</a>
             </li>
 
-            <li class="nav-item">
+            <li sec:authorize="isAuthenticated()" class="nav-item">
                 <a class="nav-link" href="logout">Logout</a>
             </li>
         </ul>

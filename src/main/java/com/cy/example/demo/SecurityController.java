@@ -30,39 +30,6 @@ public class SecurityController {
         return "navpage";
     }
 
-    /*public void createUsers() {
-
-        User user = new User();
-        user.setUsername("applicant");
-        user.setPassword("password");
-        user.setId(1);
-
-        Role role = new Role();
-        role.setRole("APPLICANT");
-
-        Collection<Role>  list = Arrays.asList(role);
-        user.setRoles(list);
-
-
-        User user2 = new User();
-        user2.setUsername("employer");
-        user2.setPassword("password");
-        user.setId(2);
-
-        Role role2 = new Role();
-        role2.setRole("EMPLOYER");
-
-        Collection<Role>  list2 = Arrays.asList(role2);
-        user2.setRoles(list2);
-
-        userRepository.save(user);
-        userRepository.save(user2);
-
-        return;
-    }*/
-
-
-
     @RequestMapping("/")
     public String mainpage(Model model) {
         return "mainpage";
@@ -108,24 +75,17 @@ public class SecurityController {
 
     }
 
-
-
     @RequestMapping("/roles")
     public @ResponseBody String showRoles(User user)
     {
         return "Roles available:"+roleRepository.findAll().toString();
     }
 
-
     @RequestMapping("/login")
     public String login(){
         return "login";
     }
 
-    @RequestMapping("/logout")
-    public String secure(){
-        return "homepage";
-    }
 
     @RequestMapping("/ApplicantMenu")
     public String showapplmenu(Model model) {
